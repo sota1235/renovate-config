@@ -15,6 +15,7 @@
     "group:recommended",
     "schedule:weekends"
   ],
+  "labels": ["dependencies"],
   "prNotPendingHours": 1,
   "timezone": "Asia/Tokyo"
 }
