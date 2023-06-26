@@ -13,7 +13,8 @@
     ":automergePr",
     "group:monorepos",
     "group:recommended",
-    "schedule:weekends"
+    "schedule:weekends",
+    "helpers:pinGitHubActionDigests"
   ],
   "labels": ["dependencies"],
   "prNotPendingHours": 1,
