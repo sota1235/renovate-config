@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     ":separateMajorReleases",
     ":ignoreUnstable",
@@ -11,12 +12,21 @@
     ":automergeTypes",
     ":automergePatch",
     ":automergePr",
+    "npm:unpublishSafe",
     "group:monorepos",
     "group:recommended",
-    "schedule:weekends",
-    "helpers:pinGitHubActionDigests"
+    "schedule:weekends"
   ],
   "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["actions"],
+      "excludePackagePrefixes": [
+        "actions/"
+      ],
+      "pinDigests": true
+    }
+  ],
   "vulnerabilityAlerts": {
     "labels": ["security"]
   },
