@@ -17,6 +17,9 @@
     "helpers:pinGitHubActionDigests"
   ],
   "labels": ["dependencies"],
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  },
   "prNotPendingHours": 1,
   "timezone": "Asia/Tokyo"
 }
