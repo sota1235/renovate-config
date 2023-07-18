@@ -8,7 +8,7 @@ Renovate config for me.
 ```json
 {
   "extends": [
-    "github>sota1235/renovate-config:0.0.2"
+    "github>sota1235/renovate-config:0.0.3"
   ]
 }
 ```
