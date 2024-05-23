@@ -28,7 +28,7 @@
   },
   "packageRules": [
     {
-      "matchDepTypes": ["actions"],
+      "matchManagers": ["github-actions"],
       "excludePackagePrefixes": [
         "actions/"
       ],
