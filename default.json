@@ -12,6 +12,7 @@
     ":automergeTypes",
     ":automergePatch",
     ":automergePr",
+    "helpers:pinGitHubActionDigestsToSemver",
     "npm:unpublishSafe",
     "group:monorepos",
     "group:recommended",
@@ -28,16 +29,6 @@
   },
   "packageRules": [
     {
-      "description": "Pin github-actions dependencies(only 3rd party)",
-      "matchManagers": ["github-actions"],
-      "excludePackagePrefixes": [
-        "actions/"
-      ],
-      "extractVersion": "^(?<version>v\\d+\\.\\d+\\.\\d+)$",
-      "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$",
-      "pinDigests": true
-    },
-    {
       "description": "Control version of Node.js on Dockerfile",
       "matchPackageNames": ["node"],
       "matchManagers": ["dockerfile"],
@@ -47,6 +38,7 @@
       "description": "Automerge minor/patch updates for some npm packages",
       "matchManagers": ["npm"],
       "matchPackageNames": [
+        "dotenv",
         "lint-staged",
         "husky"
       ],
