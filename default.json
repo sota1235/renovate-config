@@ -12,6 +12,7 @@
     ":automergeTypes",
     ":automergePatch",
     ":automergePr",
+    "helpers:pinGitHubActionDigestsToSemver",
     "npm:unpublishSafe",
     "group:monorepos",
     "group:recommended",
@@ -19,7 +20,15 @@
     "helpers:pinGitHubActionDigestsToSemver",
     "github>aquaproj/aqua-renovate-config#2.6.0"
   ],
+  "rebaseWhen": "conflicted",
   "labels": ["dependencies"],
+  "github-actions": {
+    "fileMatch": [
+      "^(workflow-templates|\\.(?:github|gitea|forgejo)/workflows)/[^/]+\\.ya?ml$",
+      "(^|/)action\\.ya?ml$",
+      "\\.github/actions/.+\\.ya?ml$"
+    ]
+  },
   "packageRules": [
     {
       "description": "Automerge patch and minor updates for node-version",
@@ -36,6 +45,23 @@
       "description": "Automerge patch and minor updates for github actions",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true
+    },
+    {
+      "description": "Control version of Node.js on Dockerfile",
+      "matchPackageNames": ["node"],
+      "matchManagers": ["dockerfile"],
+      "allowedVersions": "/^[0-9]*[02468]([.-].*)?$/"
+    },
+    {
+      "description": "Automerge minor/patch updates for some npm packages",
+      "matchManagers": ["npm"],
+      "matchPackageNames": [
+        "dotenv",
+        "lint-staged",
+        "husky"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
   ],
