@@ -15,18 +15,16 @@
     "npm:unpublishSafe",
     "group:monorepos",
     "group:recommended",
-    "schedule:weekends"
+    "schedule:weekends",
+    "helpers:pinGitHubActionDigestsToSemver"
   ],
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "matchDepTypes": ["actions"],
-      "excludePackagePrefixes": [
-        "actions/"
-      ],
-      "extractVersion": "^(?<version>v\\d+\\.\\d+\\.\\d+)$",
-      "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$",
-      "pinDigests": true
+      "description": "Automerge minor updates for node-version",
+      "matchDatasources": ["node-version"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true
     }
   ],
   "vulnerabilityAlerts": {
