@@ -22,14 +22,20 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "description": "Automerge minor updates for node-version",
+      "description": "Automerge patch and minor updates for node-version",
       "matchDatasources": ["node-version"],
       "matchUpdateTypes": ["patch", "minor"],
       "automerge": true
     },
     {
-      "description": "Automerge minor updates for aqua-registry",
+      "description": "Automerge updates for aqua-registry",
       "matchPackageNames": ["aquaproj/aqua-registry"],
+      "automerge": true
+    },
+    {
+      "description": "Automerge patch and minor updates for github actions",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["patch", "minor"],
       "automerge": true
     }
   ],
