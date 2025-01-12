@@ -16,7 +16,8 @@
     "npm:unpublishSafe",
     "group:monorepos",
     "group:recommended",
-    "schedule:weekends"
+    "schedule:weekends",
+    "github>aquaproj/aqua-renovate-config#2.6.0"
   ],
   "rebaseWhen": "conflicted",
   "labels": ["dependencies"],
@@ -28,6 +29,23 @@
     ]
   },
   "packageRules": [
+    {
+      "description": "Automerge patch and minor updates for node-version",
+      "matchDatasources": ["node-version"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true
+    },
+    {
+      "description": "Automerge updates for aqua-registry",
+      "matchPackageNames": ["aquaproj/aqua-registry"],
+      "automerge": true
+    },
+    {
+      "description": "Automerge patch and minor updates for github actions",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true
+    },
     {
       "description": "Control version of Node.js on Dockerfile",
       "matchPackageNames": ["node"],
