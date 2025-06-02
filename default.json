@@ -3,7 +3,6 @@
   "extends": [
     ":separateMajorReleases",
     ":ignoreUnstable",
-    ":prNotPending",
     ":updateNotScheduled",
     ":prHourlyLimitNone",
     ":prConcurrentLimitNone",
