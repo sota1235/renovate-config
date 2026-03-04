@@ -16,7 +16,7 @@
     "group:monorepos",
     "group:recommended",
     "schedule:weekends",
-    "github>aquaproj/aqua-renovate-config#2.6.0"
+    "github>aquaproj/aqua-renovate-config#2.10.0"
   ],
   "rebaseWhen": "conflicted",
   "labels": ["dependencies"],
