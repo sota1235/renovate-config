@@ -20,13 +20,6 @@
   ],
   "rebaseWhen": "conflicted",
   "labels": ["dependencies"],
-  "github-actions": {
-    "fileMatch": [
-      "^(workflow-templates|\\.(?:github|gitea|forgejo)/workflows)/[^/]+\\.ya?ml$",
-      "(^|/)action\\.ya?ml$",
-      "\\.github/actions/.+\\.ya?ml$"
-    ]
-  },
   "packageRules": [
     {
       "description": "Automerge patch and minor updates for node-version",
